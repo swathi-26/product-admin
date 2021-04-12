@@ -1,0 +1,41 @@
+<div *ngIf='!isEditClicked' class="items">
+  <div class="card" *ngFor='let item of itemsList; index as i'>
+    <div class="row">
+      <div class="col-4">
+        <!-- Name -->
+        <h2 class="text-primary">{{item.name}}</h2>
+      </div>
+      <div class="col-2">
+        <!-- category -->
+        <span>{{item.category}}</span>
+      </div>
+      <div class="col-2">
+        <!-- price -->
+        <span>{{item.price}}</span>
+      </div>
+      <div class="col-3">
+        <!-- description -->
+        <span>{{item.description}}</span>
+      </div>
+    </div>
+    <!-- action buttons -->
+    <div class="row actionkeys">
+      <div class="col-5">
+        <button class="btn btn-sm btn-primary" (click)='editItem(i)'>Edit</button>
+      </div>
+      <div class="col-1"></div>
+      <div class="col-5">
+        <button class="btn btn-sm btn-danger" (click)='deleteItem(i)'>Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <h1 *ngIf='itemsList.length <= 0'>
+    No items found
+  </h1>
+</div>
+
+
+<app-add-item [showContent]='isEditClicked' parent='view'
+(viewInventory)="disableEdit($event)">
+</app-add-item>

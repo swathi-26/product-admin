@@ -1,0 +1,13 @@
+.container{
+    width: 100%;
+    height: max-content;
+    margin: 3% auto;
+    padding: 3%;
+    box-shadow: 0px 0px 6px 1px rgba(15,13,13,0.66) !important;
+    -webkit-box-shadow: 0px 0px 6px 1px rgba(15,13,13,0.66) !important;
+    -moz-box-shadow: 0px 0px 6px 1px rgba(15,13,13,0.66) !important;
+}
+
+button + button{
+    margin-left: 1%;
+}
